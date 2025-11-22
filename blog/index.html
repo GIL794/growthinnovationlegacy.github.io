@@ -1,0 +1,44 @@
+---
+layout: default
+title: Blog
+---
+
+<div class="blog-header">
+  <div class="container">
+    <h1>Our Blog</h1>
+    <p>Insights, strategies, and stories from the world of innovation and growth</p>
+  </div>
+</div>
+
+<div class="blog-list">
+  <div class="container">
+    <div class="blog-posts">
+      {% for post in site.posts %}
+        <article class="blog-post-item">
+          <div class="post-meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+            {% if post.author %}
+            <span class="post-author">by {{ post.author }}</span>
+            {% endif %}
+          </div>
+          <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+          {% if post.categories %}
+          <div class="post-categories">
+            {% for category in post.categories %}
+              <span class="category">{{ category }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+          <p>{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
+          <a href="{{ post.url | relative_url }}" class="read-more">Read More →</a>
+        </article>
+      {% endfor %}
+      
+      {% if site.posts.size == 0 %}
+        <div class="no-posts">
+          <p>No posts yet. Check back soon for updates!</p>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

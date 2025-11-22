@@ -1,0 +1,26 @@
+<header class="site-header">
+  <div class="container">
+    <div class="header-content">
+      <div class="site-title">
+        <a href="{{ '/' | relative_url }}">
+          <span class="logo">GIL</span>
+          <span class="title-text">{{ site.title }}</span>
+        </a>
+      </div>
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger" class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <div class="nav-menu">
+          <a href="{{ '/' | relative_url }}" {% if page.url == "/" %}class="active"{% endif %}>Home</a>
+          <a href="{{ '/blog/' | relative_url }}" {% if page.url contains '/blog' %}class="active"{% endif %}>Blog</a>
+          <a href="{{ '/about/' | relative_url }}" {% if page.url == "/about/" %}class="active"{% endif %}>About</a>
+          <a href="{{ '/contact/' | relative_url }}" {% if page.url == "/contact/" %}class="active"{% endif %}>Contact</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
