@@ -3,7 +3,6 @@ title: Growth Innovation Legacy
 description: >-
   Empowering organizations through innovative solutions and sustainable growth strategies.
   Building legacies that last.
-baseurl: ""
 url: "https://gil794.github.io"
 
 # Author settings
@@ -12,7 +11,6 @@ author:
   email: contact@growthinnovationlegacy.com
 
 # Build settings
-markdown: kramdown
 permalink: /blog/:year/:month/:day/:title/
 
 # Collections
@@ -37,6 +35,3 @@ social:
   github: GIL794
   linkedin: company/growth-innovation-legacy
   twitter: GrowthInnoLegacy
-
-# Theme
-theme: minima
