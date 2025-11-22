@@ -1,0 +1,42 @@
+# Site settings
+title: Growth Innovation Legacy
+description: >-
+  Empowering organizations through innovative solutions and sustainable growth strategies.
+  Building legacies that last.
+baseurl: ""
+url: "https://gil794.github.io"
+
+# Author settings
+author:
+  name: Growth Innovation Legacy
+  email: contact@growthinnovationlegacy.com
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# Pagination
+paginate: 10
+paginate_path: "/blog/page:num/"
+
+# Exclude from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+
+# Social links
+social:
+  github: GIL794
+  linkedin: company/growth-innovation-legacy
+  twitter: GrowthInnoLegacy
+
+# Theme
+theme: minima

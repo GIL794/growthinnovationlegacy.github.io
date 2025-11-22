@@ -1,0 +1,65 @@
+---
+layout: default
+title: Home
+---
+
+<div class="hero">
+  <div class="hero-content">
+    <h1>Growth Innovation Legacy</h1>
+    <p class="tagline">Empowering Organizations Through Innovation</p>
+    <p class="hero-description">
+      We help businesses transform challenges into opportunities, creating sustainable growth strategies that build lasting legacies.
+    </p>
+    <div class="cta-buttons">
+      <a href="/blog/" class="btn btn-primary">Read Our Blog</a>
+      <a href="/about/" class="btn btn-secondary">Learn More</a>
+    </div>
+  </div>
+</div>
+
+<section class="features">
+  <div class="container">
+    <h2>What We Do</h2>
+    <div class="feature-grid">
+      <div class="feature-item">
+        <div class="feature-icon">💡</div>
+        <h3>Innovation Strategy</h3>
+        <p>Developing cutting-edge strategies that position your organization at the forefront of your industry.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">📈</div>
+        <h3>Sustainable Growth</h3>
+        <p>Building scalable solutions that ensure long-term success and competitive advantage.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🎯</div>
+        <h3>Legacy Building</h3>
+        <p>Creating lasting impact through strategic planning and execution excellence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="recent-posts">
+  <div class="container">
+    <h2>Latest Insights</h2>
+    <div class="posts-grid">
+      {% for post in site.posts limit:3 %}
+        <article class="post-card">
+          <div class="post-meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+            {% if post.author %}
+            <span class="post-author">by {{ post.author }}</span>
+            {% endif %}
+          </div>
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+          <a href="{{ post.url | relative_url }}" class="read-more">Read More →</a>
+        </article>
+      {% endfor %}
+    </div>
+    <div class="view-all">
+      <a href="/blog/" class="btn btn-primary">View All Posts</a>
+    </div>
+  </div>
+</section>
